@@ -1,0 +1,10 @@
+CREATE TABLE orders(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    uuid VARCHAR(36) UNIQUE NOT NULL,
+    customer VARCHAR(100) NOT NULL,
+    amount DECIMAL(6,2) NOT NULL,
+    status VARCHAR(12) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_order_uuid ON orders(uuid)

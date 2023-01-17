@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0.30
+    container_name: order-mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    network_mode: host
+    environment:
+      MYSQL_DATABASE: order
+      MYSQL_USER: order
+      MYSQL_PASSWORD: d41d8cd98f00b204e9800998ecf8427e
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+
+  rabbitmq:
+    container_name: order-rabbitmq
+    image: rabbitmq:3.9-management
+    network_mode: host
+
+  redis:
+    container_name: order-redis
+    image: redis:alpine
+    network_mode: host

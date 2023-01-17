@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: order
+    password: d41d8cd98f00b204e9800998ecf8427e
+    url: jdbc:mysql://localhost:3306/order
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+
+repository:
+  type: jdbc
